@@ -34,7 +34,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-  test:
+  test-job:
     needs: build
     environment: Test
     # The type of runner that the job will run on
