@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
+        
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+
+      - name: SN Register Artifact
+        uses: ServiceNow/servicenow-devops-register-artifact@v2.0.0
+        with:
+          devops-integration-token: ${{ secrets.SN_TOKEN }}
+          instance-url: ${{ secrets.SN_URL }}
+          tool-id: ${{ secrets.SN_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: ${{ github.job }}
+          artifacts: '[{"name": "demo-artifact", "version": "1.${{ github.run_number }}.0", "repositoryName": "${{ github.repository }}"}]'
+  
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: trigger deploy
+        run: |
+          curl -X POST https://api.github.com/repos/rapdev-io/jon-test-open/actions/workflows/deploy.yml/dispathes \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.GH_TOKEN }} \
+          --data '{"ref":"main","inputs":{"artifact_version": "1.${{ github.run_number }}.0"}}'
+      
