@@ -19,7 +19,7 @@ jobs:
           tool-id: ${{ secrets.SN_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
-          artifacts: '[{"name": "demo-artifact", "version": "${{ inputs.artifact_version }}", "respositoryName": "${{ github.repository }}"}]'
+          artifacts: '[{"name": "demo-artifact", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
           package-name: 'Demo Package - ${{ github.run_number }}'
 
   deploy:
