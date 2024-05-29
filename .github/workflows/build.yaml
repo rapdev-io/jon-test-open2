@@ -33,7 +33,7 @@ jobs:
           artifacts: '[{"name": "demo-artifact-2", "version": "1.${{ github.run_number }}.0", "repositoryName": "${{ github.repository }}"}]'
   
   test:
-    needs: build
+    needs: build 
     runs-on: ubuntu-latest
 
     steps:
