@@ -30,7 +30,7 @@ jobs:
           tool-id: ${{ secrets.SN_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
-          artifacts: '[{"name": "demo-artifact", "version": "1.${{ github.run_number }}.0", "repositoryName": "${{ github.repository }}"}]'
+          artifacts: '[{"name": "demo-artifact-2", "version": "1.${{ github.run_number }}.0", "repositoryName": "${{ github.repository }}"}]'
   
   test:
     needs: build 
