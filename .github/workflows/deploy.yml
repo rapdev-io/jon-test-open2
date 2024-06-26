@@ -19,6 +19,7 @@ jobs:
           tool-id: ${{ secrets.SN_TOOL_ID }}
           job-name: ${{ github.job }}
           context-github: ${{ toJSON(github) }}
+          change-request: '{}'
           deployment-gate: '{"environment":"production","jobName":"Deploy"}'
               
       
