@@ -8,7 +8,7 @@ on:
 
   workflow_dispatch:
 
-run-name: ${{ github.event.inputs.name }}
+#run-name: ${{ github.event.inputs.name }} 
 jobs:
   build:
     runs-on: ubuntu-latest
