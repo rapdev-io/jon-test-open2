@@ -20,7 +20,7 @@ jobs:
           job-name: ${{ github.job }}
           context-github: ${{ toJSON(github) }}
           change-request: '{}'
-          deployment-gate: '{"environment":"production","jobName":"Deploy"}'
+          deployment-gate: '{"environment":"Production","jobName":"deploy"}'
               
       
   package-registration:
