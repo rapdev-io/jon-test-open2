@@ -1,4 +1,4 @@
-name: Build-Rename
+name: Build
 
 on:
   push:
