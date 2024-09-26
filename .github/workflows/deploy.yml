@@ -27,7 +27,7 @@ jobs:
           tool-id: ${{ secrets.SN_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
-          artifacts: '[{"name": "demo-artifact", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
+          artifacts: '[{"name": "jon-devops.war - AUTO", "version": "${{ inputs.artifact_version }}", "repositoryName": "Jon - DevOps (PIPELINE)"}]'
           package-name: 'Demo Package - ${{ github.run_number }}'
       - name: ServiceNow DevOps Change Automation
         uses: ServiceNow/servicenow-devops-change@v4.0.0
