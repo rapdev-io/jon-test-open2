@@ -38,7 +38,7 @@ jobs:
           job-name: ${{ github.job }}
           context-github: ${{ toJSON(github) }}
           change-request: '{}'
-          deployment-gate: '{"environment":"Production","jobName":"deploy"}'
+          deployment-gate: '{"environment":"Production","jobName":"My deploy test"}'
       
 
   deploy:
