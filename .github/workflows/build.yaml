@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-java@v4.5.0
         with:
           java-version: 17
-          distribution: jdk
+          distribution: oracle
 
       - name: Compile
         run: mvn compile
@@ -43,7 +43,7 @@ jobs:
         uses: actions/setup-java@v4.5.0
         with:
           java-version: 17
-          distribution: jdk
+          distribution: oracle
 
       - name: Cache SonarQube packages
         uses: actions/cache@v4.1.2
