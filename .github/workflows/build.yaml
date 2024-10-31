@@ -65,6 +65,7 @@ jobs:
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jon-test-open2
     
       - name: ServiceNow DevOps Unit Test Results
+        uses: ServiceNow/servicenow-devops-test-report@v3.1.0
         with:
           instance-url: ${{ secrets.SN_URL }}
           devops-integration-token: ${{ secrets.SN_TOKEN }}
@@ -72,7 +73,6 @@ jobs:
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
           xml-report-filename: target/surefire-reports/TEST-RapDevBackEndTests.xml
-          
       
       - name: ServiceNow DevOps Sonar
         uses: ServiceNow/servicenow-devops-sonar@v3.1.0
