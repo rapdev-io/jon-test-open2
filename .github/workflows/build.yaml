@@ -30,7 +30,7 @@ jobs:
           tool-id: ${{ secrets.SN_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
-          artifacts: '[{"name": "demo-artifact2", "version": "1.${{ github.run_number }}.0", "repositoryName": "${{ github.repository }}"}]'
+          artifacts: '[{"name": "jon-test-open2", "version": "1.${{ github.run_number }}.0", "repositoryName": "${{ github.repository }}"}]'
   
   test:
     needs: build 
@@ -64,7 +64,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jon-test-open2 -Dsonar.branch.name=main
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jon-test-open2
     
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report@v3.1.0
