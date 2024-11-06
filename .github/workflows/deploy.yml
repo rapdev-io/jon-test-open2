@@ -26,7 +26,7 @@ jobs:
           instance-url: ${{ secrets.SN_URL }}
           tool-id: ${{ secrets.SN_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
-          job-name: "${{ github.job }} / ${{ inputs.artifact_version }}"
+          job-name: ${{ github.job }} / ${{ inputs.artifact_version }}
           artifacts: '[{"name": "jon-test-open2", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
           package-name: 'Demo Package - ${{ github.run_number }}'
       - name: ServiceNow DevOps Change Automation
