@@ -1,0 +1,9 @@
+name: Caller Workflow
+
+on:
+  workflow_dispatch:
+
+#run-name: ${{ github.event.inputs.name }} 
+jobs:  
+  build:
+    uses: rapdev.io/jon-devops/.github/workflows/reusable-test.yaml@master
