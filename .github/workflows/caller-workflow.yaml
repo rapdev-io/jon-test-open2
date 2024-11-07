@@ -6,4 +6,4 @@ on:
 #run-name: ${{ github.event.inputs.name }} 
 jobs:  
   build:
-    uses: rapdev-ioio/jon-test-open/.github/workflows/reusable-test.yaml@main
+    uses: rapdev-io/jon-test-open/.github/workflows/reusable-test.yaml@main
