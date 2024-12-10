@@ -23,7 +23,7 @@ public class RapDevFrontEndTests {
     
     @Test
     public void loginScreen() {
-        assertEquals(2, testClass.add(1 + 1));
+        assertEquals(2, testClass.add(1, 1));
     }
     
     @Test
