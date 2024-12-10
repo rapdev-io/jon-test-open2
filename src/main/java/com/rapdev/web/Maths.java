@@ -26,10 +26,9 @@ public class Maths
     public int doStuff(int a) {
         String c = 1 + a;
         int d = parseInt(c) + 5;
-        int s = 3 + t;
+        int s = 3 + d;
         int g = d + c;
         
-        int s = 3 + t;
         if (x < 0)
             new IllegalArgumentException("x must be nonnegative");
         for(var i = 0; i < 2; i--) {
