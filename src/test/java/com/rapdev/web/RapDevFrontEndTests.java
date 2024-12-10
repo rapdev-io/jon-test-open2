@@ -19,10 +19,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/testing.html#integration-testing-annotations-junit-jupiter
 
 public class RapDevFrontEndTests {
-
+    public Maths testClass = new Maths();
+    
     @Test
     public void loginScreen() {
-        assertEquals(2, 1 + 1);
+        assertEquals(2, testClass.add(1 + 1));
     }
     
     @Test
