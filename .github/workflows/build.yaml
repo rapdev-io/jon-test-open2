@@ -19,7 +19,7 @@ jobs:
           java-version: 11
 
       - name: Compile
-        run: mvn compile
+        run: mvn compile -Dmaven.clean.failOnError=false
 
       - name: SN Register Artifact
         uses: ServiceNow/servicenow-devops-register-artifact@v3.1.0
@@ -63,7 +63,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: |
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jon-test-open2
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jon-test-open2 -Dmaven.clean.failOnError=false
           pwd
           ls
           cd target
