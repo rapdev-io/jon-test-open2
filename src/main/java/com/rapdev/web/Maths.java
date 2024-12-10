@@ -23,11 +23,10 @@ public class Maths
     	return a / b;
     }
     
-    public int doStuff(int a) {
+    public String doStuff(int a) {
         String c = 1 + Integer.toString(a);
         int d = Integer.parseInt(c) + 5;
         int s = 3 + d;
-        int g = d + c;
 
         int x = 3;
         if (x < 0)
