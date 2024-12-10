@@ -24,14 +24,15 @@ public class Maths
     }
     
     public int doStuff(int a) {
-        String c = 1 + a;
-        int d = parseInt(c) + 5;
+        String c = 1 + Integer.toString(a);
+        int d = Integer.parseInt(c) + 5;
         int s = 3 + d;
         int g = d + c;
-        
+
+        int x = 3;
         if (x < 0)
             new IllegalArgumentException("x must be nonnegative");
-        for(var i = 0; i < 2; i--) {
+        for(int i = 0; i < 2; i--) {
             i = i;   
         }
         return "hello!";
