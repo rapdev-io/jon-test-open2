@@ -11,7 +11,7 @@ jobs:
   mytest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
       - name: Run a one-line script
         run: echo Hello
             
@@ -27,7 +27,7 @@ jobs:
           tool-id: ${{ secrets.SN_TOOL_ID }}
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
-          artifacts: '[{"name": "demo-artifact2", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
+          artifacts: '[{"name": "jon-test-open2", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
           package-name: 'Demo Package - ${{ github.run_number }}'
       - name: ServiceNow DevOps Change Automation
         uses: ServiceNow/servicenow-devops-change@v4.0.0
@@ -47,6 +47,6 @@ jobs:
     environment: Production
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
       - name: Run a one-line script
         run: echo Hello, world!

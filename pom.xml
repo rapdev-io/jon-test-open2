@@ -8,7 +8,7 @@
     <artifactId>rapdev-web</artifactId>
     <!-- <packaging>war</packaging> -->
     <version>${revision}</version>
-    <name>rapdev-web</name>
+    <name>jon-test-open2</name>
     <url>http://maven.apache.org</url>
 
     <properties>
