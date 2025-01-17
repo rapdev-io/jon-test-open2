@@ -2,7 +2,8 @@ name: Deploy-Test
 
 on:
   workflow_dispatch:
-
+  
+run-name: My Test Run
 jobs:
 
   deploy1:
