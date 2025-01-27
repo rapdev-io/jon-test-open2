@@ -7,5 +7,3 @@ test
 test
 test
 test
-yrdy
-t
