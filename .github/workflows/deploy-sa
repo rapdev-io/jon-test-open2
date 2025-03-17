@@ -1,0 +1,41 @@
+name: Deploy - Service Account
+
+on:
+  workflow_dispatch:
+    inputs:
+      artifact_version:
+        required: true
+        type: string
+
+jobs:
+  mytest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Run a one-line script
+        run: echo Hello
+            
+  package-registration:
+    needs: mytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: SN Register Artifact
+        uses: ServiceNow/servicenow-devops-register-package@v3.1.0
+        with:
+          devops-integration-token: ${{ secrets.SN_TOKEN }}
+          instance-url: ${{ secrets.SN_URL }}
+          tool-id: ${{ secrets.SN_TOOL_ID }}
+          context-github: ${{ toJSON(github) }}
+          job-name: ${{ github.job }}
+          artifacts: '[{"name": "jon-test-open2", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
+          package-name: 'Demo Package - ${{ github.run_number }}'
+      
+  deploy:
+    name: My deploy test
+    needs: package-registration
+    environment: Production2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - name: Run a one-line script
+        run: echo Hello, world!
