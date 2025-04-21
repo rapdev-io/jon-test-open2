@@ -20,7 +20,7 @@ jobs:
           distribution: oracle
 
       - name: Compile
-        run: mvn compile
+        run: mvn compile -Drevision=1.${{ github.run_number }}.0
 
       - name: SN Register Artifact
         uses: ServiceNow/servicenow-devops-register-artifact@v3.1.0
@@ -62,7 +62,7 @@ jobs:
       - name: Analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rapdev-io_jon-test-open2
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rapdev-io_jon-test-open2 -Drevision=1.${{ github.run_number }}.0
     
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report@v3.1.0
