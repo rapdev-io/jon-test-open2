@@ -19,7 +19,6 @@
         <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
 		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 		<sonar.projectKey>rapdev-io_jon-test-open2</sonar.projectKey>
-		<sonar.jacoco.reportPath>target/jacoco.exe</sonar.jacoco.reportPath>
     </properties>
 
     <dependencies>
