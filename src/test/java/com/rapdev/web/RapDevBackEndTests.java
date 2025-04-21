@@ -1,3 +1,5 @@
+package com.rapdev.javaprojects.maths;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
