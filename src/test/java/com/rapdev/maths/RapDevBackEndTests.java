@@ -13,7 +13,7 @@ public class RapDevBackEndTests {
     
     @Test
     public void passwordChange() {
-        assertEquals(2, 1 + 1);
+        assertEquals(3, 1 + 1);
     }
     
     @Test
