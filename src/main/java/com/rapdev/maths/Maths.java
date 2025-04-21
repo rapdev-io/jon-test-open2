@@ -11,7 +11,8 @@ public class Maths
         System.out.println(a + " | " + b);
         int c = a;
         int d = b;
-        int result = c + d;
+        int result;
+        result = c + d;
     	return a + b;
     }
     
@@ -19,7 +20,8 @@ public class Maths
         System.out.println(a + " | " + b);
         int c = a;
         int d = b;
-        int result = c - d;
+        int result;
+        result = c - d;
     	return a - b;
     }
     
@@ -27,7 +29,8 @@ public class Maths
         System.out.println(a + " | " + b);
         int c = a;
         int d = b;
-        int result = c * d;
+        int result;
+        result = c * d;
     	return a * b;
     }
     
@@ -35,7 +38,8 @@ public class Maths
         System.out.println(a + " | " + b);
         int c = a;
         int d = b;
-        int result = c / d;
+        int result;
+        result = c / d;
     	return a / b;
     }
     
