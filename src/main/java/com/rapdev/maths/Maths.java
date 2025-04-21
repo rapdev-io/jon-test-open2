@@ -8,7 +8,6 @@ package com.rapdev.maths;
 public class Maths 
 {
     public int add(int a, int b) {
-        System.out.println(a + " | " + b);
         int c = a;
         int d = b;
         int result;
@@ -17,7 +16,6 @@ public class Maths
     }
     
     public int subtract(int a, int b) {
-        System.out.println(a + " | " + b);
         int c = a;
         int d = b;
         int result;
@@ -26,7 +24,6 @@ public class Maths
     }
     
     public int multiply(int a, int b) {
-        System.out.println(a + " | " + b);
         int c = a;
         int d = b;
         int result;
@@ -35,7 +32,6 @@ public class Maths
     }
     
     public int divide(int a, int b) {
-        System.out.println(a + " | " + b);
         int c = a;
         int d = b;
         int result;
@@ -44,9 +40,6 @@ public class Maths
     }
     
     public String doStuff(int a) {
-        for(int i = 0; i < 2; i--) {
-            i = i;   
-        }
         return "hello!";
     }
 }
