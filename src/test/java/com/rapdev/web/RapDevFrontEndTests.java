@@ -1,4 +1,4 @@
-package com.rapdev.javaprojects.maths;
+//package com.rapdev.javaprojects.maths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
