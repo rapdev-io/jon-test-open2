@@ -1,8 +1,7 @@
 package com.rapdev.javaprojects.maths;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/testing.html#integration-testing-annotations-junit-jupiter
 
