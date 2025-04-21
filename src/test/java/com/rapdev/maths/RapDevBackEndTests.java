@@ -7,7 +7,8 @@ public class RapDevBackEndTests {
 
     @Test
     public void loginSuccess() {
-        assertEquals(2, 1 + 1);
+        Maths testClass = new Maths();
+        assertTrue(testClass.divide(6, 3) == 2);
     }
     
     @Test
