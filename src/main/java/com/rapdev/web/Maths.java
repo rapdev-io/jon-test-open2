@@ -27,6 +27,7 @@ public class Maths
         String c = 1 + Integer.toString(a);
         int d = Integer.parseInt(c) + 5;
         int s = 3 + d;
+        int t = 4 + 3;
 
         int x = 3;
         if (x < 0)
