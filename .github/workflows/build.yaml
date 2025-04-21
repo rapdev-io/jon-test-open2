@@ -83,7 +83,7 @@ jobs:
           context-github: ${{ toJSON(github) }}
           job-name: ${{ github.job }}
           sonar-host-url: ${{ secrets.SONAR_HOST_URL }}
-          sonar-project-key: jon-test-open2
+          sonar-project-key: rapdev-io_jon-test-open2
                            
   # deploy:
   #   needs: test
