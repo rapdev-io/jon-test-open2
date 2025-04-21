@@ -46,14 +46,14 @@ jobs:
           distribution: oracle
 
       - name: Cache SonarQube packages
-        uses: actions/cache@v4.1.2
+        uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
           
       - name: Cache Maven packages
-        uses: actions/cache@v4.1.2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -61,10 +61,8 @@ jobs:
           
       - name: Analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jon-test-open2
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rapdev-io_jon-test-open2
     
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report@v3.1.0
