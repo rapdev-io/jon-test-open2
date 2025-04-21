@@ -1,4 +1,4 @@
-package com.rapdev.javaprojects.maths;
+package com.rapdev.maths;
 
 /**
  * 
