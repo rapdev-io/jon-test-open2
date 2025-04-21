@@ -36,9 +36,6 @@ public class Maths
     }
     
     public String doStuff(int a) {
-        int x = 3;
-        if (x < 0)
-            new IllegalArgumentException("x must be nonnegative");
         for(int i = 0; i < 2; i--) {
             i = i;   
         }
