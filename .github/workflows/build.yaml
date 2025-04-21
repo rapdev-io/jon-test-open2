@@ -63,7 +63,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: | 
-          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Drevision=1.${{ github.run_number }}.0
+          mvn -B verify -Drevision=1.${{ github.run_number }}.0
+          cat target/site/jacoco/jacoco.xml
+          mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
     
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report@v3.1.0
