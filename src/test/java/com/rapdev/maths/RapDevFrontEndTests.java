@@ -14,11 +14,14 @@ public class RapDevFrontEndTests {
     
     @Test
     public void profilePage() {
-        assertEquals(2, 1 + 1);
+        Maths testClass = new Maths();
+        assertEquals(testClass.subtract(3, 1) == 2);
     }
     
     @Test
     public void errorNessagesStyling() {
         assertEquals(2, 1 + 1);
+        Maths testClass = new Maths();
+        assertEquals(testClass.multiply(3, 2) == 6);
     }
 }
