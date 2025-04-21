@@ -62,7 +62,11 @@ jobs:
       - name: Analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Drevision=1.${{ github.run_number }}.0 -Dsonar.projectKey=rapdev-io_jon-test-open2
+        run: | 
+          mvn -B verify -Drevision=1.${{ github.run_number }}.0
+          cd target
+          ls
+          mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rapdev-io_jon-test-open2
     
       - name: ServiceNow DevOps Unit Test Results
         uses: ServiceNow/servicenow-devops-test-report@v3.1.0
