@@ -64,8 +64,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: | 
           mvn -B verify -Drevision=1.${{ github.run_number }}.0
-          cd target
-          ls
           mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rapdev-io_jon-test-open2
     
       - name: ServiceNow DevOps Unit Test Results
