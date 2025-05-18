@@ -50,7 +50,7 @@ jobs:
 
   deploy:
     name: My deploy test
-    needs: package-registration
+    needs: uat-deploy
     environment: Production
     runs-on: ubuntu-latest
     steps:
