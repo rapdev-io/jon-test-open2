@@ -47,6 +47,8 @@ jobs:
           context-github: ${{ toJSON(github) }}
           change-request: '{}'
           deployment-gate: '{"environment":"Production","jobName":"My deploy test"}'
+      - name: script
+        run: sleep 30
 
   deploy:
     name: My deploy test
