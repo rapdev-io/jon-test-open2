@@ -2,6 +2,4 @@ my test
 test
 test
 t
-test
-test
-test
+t
