@@ -7,9 +7,16 @@ on:
         required: true
         type: string
 
-jobs:           
+jobs:
+  delay:
+    runs-on: ubuntu-latest
+    steps:
+      - name: script
+        run: sleep 5
+      
   package-registration:
     runs-on: ubuntu-latest
+    needs: delay
     steps:
       - name: SN Register Package
         uses: ServiceNow/servicenow-devops-register-package@v5.1.0
