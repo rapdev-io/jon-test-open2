@@ -18,16 +18,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: delay
     steps:
-      - name: SN Register Package
-        uses: ServiceNow/servicenow-devops-register-package@v5.1.0
-        with:
-          devops-integration-token: ${{ secrets.SN_TOKEN }}
-          instance-url: ${{ secrets.SN_URL }}
-          tool-id: ${{ secrets.SN_TOOL_ID }}
-          context-github: ${{ toJSON(github) }}
-          job-name: ${{ github.job }}
-          artifacts: '[{"name": "jon-test-open2", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
-          package-name: 'Demo Package - ${{ github.run_number }}'
+      # - name: SN Register Package
+      #   uses: ServiceNow/servicenow-devops-register-package@v5.1.0
+      #   with:
+      #     devops-integration-token: ${{ secrets.SN_TOKEN }}
+      #     instance-url: ${{ secrets.SN_URL }}
+      #     tool-id: ${{ secrets.SN_TOOL_ID }}
+      #     context-github: ${{ toJSON(github) }}
+      #     job-name: ${{ github.job }}
+      #     artifacts: '[{"name": "jon-test-open2", "version": "${{ inputs.artifact_version }}", "repositoryName": "${{ github.repository }}"}]'
+      #     package-name: 'Demo Package - ${{ github.run_number }}'
       # - name: ServiceNow DevOps Change Automation
       #   uses: ServiceNow/servicenow-devops-change@v6.0.0
       #   with:
@@ -38,6 +38,8 @@ jobs:
       #     context-github: ${{ toJSON(github) }}
       #     change-request: '{}'
       #     deployment-gate: '{"environment":"UAT","jobName":"uat-deploy"}'
+      - name: script
+        run: sleep 5
 
   uat-deploy:
     runs-on: ubuntu-latest
