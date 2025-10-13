@@ -6,7 +6,7 @@ on:
 
   workflow_dispatch:
 
-#run-name: My Dynamic Name #${{ github.event.inputs.name }}  
+run-name: My Dynamic Name #${{ github.event.inputs.name }}  
 jobs:
   build:
     runs-on: ubuntu-latest
